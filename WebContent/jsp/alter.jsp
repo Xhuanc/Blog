@@ -6,10 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>账号管理</title>
-<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://localhost:8080/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 <!-- 登录成功之后，进行个人信息的修改 -->
 <!-- 导航栏 -->
- <link rel="stylesheet" type="text/css" href="http://47.102.212.18/iDouBan/css/header.css">
+ <link rel="stylesheet" type="text/css" href="http://localhost:8080/iDouBan/css/header.css">
  <style type="text/css">
  		/*放置主要的页面内容*/
 		#main_content{
@@ -47,10 +47,10 @@
 			<nav id="first">
 				<div id="first_menu">
 					<!-- 跳到servlet，对用户的cookie进行注销 -->
-				    <a  href="http://47.102.212.18/iDouBan/ClearLoginServlet">退出登录</a>
+				    <a  href="/iDouBan/ClearLoginServlet">退出登录</a>
 				    <!-- 相对于端口号的相对路径 -->
-					<a  href="http://47.102.212.18/iDouBan/jsp/alter.jsp">账号管理</a>
-					<a  href="http://47.102.212.18/iDouBan/jsp/my_page.jsp">个人主页</a>
+					<a  href="/iDouBan/jsp/alter.jsp">账号管理</a>
+					<a  href="/iDouBan/jsp/my_page.jsp">个人主页</a>
 					
 					<a href="/iDouBan/DoumailServlet?method=my_doumail_list">豆邮</a>
 					
@@ -60,7 +60,7 @@
 					<!-- 先跳转servlet 查询第一页的所有人信息 -->
 					<a href="/iDouBan/EveryoneListServlet?method=everyone_list">所有人</a>
 					<!-- 编辑文章 -->
-					<a href="http://47.102.212.18/iDouBan/jsp/article_edit.jsp" target="_blank">写文章</a>
+					<a href="/iDouBan/jsp/article_edit.jsp" target="_blank">写文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=article_list">所有文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=my_article_list" >我的文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=my_collection_list">我的收藏</a>
@@ -72,7 +72,7 @@
 					<!-- logo部分 -->
 						<div class="logo">
 						 		
-						 		<img alt="豆瓣logo" src="http://47.102.212.18/iDouBan/image/豆瓣首页logo.jpg" width=175px height=58px>
+						 		<img alt="豆瓣logo" src="http://localhost:8080/iDouBan/image/豆瓣首页logo.jpg" width=175px height=58px>
 						</div>
 					
 					</nav>
@@ -92,7 +92,7 @@
 										 
 										 <!-- 用户更换头像 -->
 										  <div>
-										  <form action="http://47.102.212.18/iDouBan/UploadServlet" method="post" enctype="multipart/form-data">
+										  <form action="http://localhost:8080/iDouBan/UploadServlet" method="post" enctype="multipart/form-data">
 											选择文件：<input type="file" name="photo" value="" /><br/>
 											 		  <input type="submit"  name = "修改" value="上传头像"/> 
 											 </form>
@@ -100,7 +100,7 @@
 										 
 										 <!-- 用作个人主页的信息展示 -->
 										 <div>
-											 <form action="http://47.102.212.18/iDouBan/MyPageServlet" method="post">
+											 <form action="http://localhost:8080/iDouBan/MyPageServlet" method="post">
 											 昵称：	  <input type = "text" name ="nickname" /><br/>
 											 个性签名：<input type = "text" name ="signature" /><br/>
 											 自我介绍：<input type = "text" name ="selfIntroduc" /><br/>
@@ -119,7 +119,7 @@
 						<div id="main_content-right">
 						</div>
 					</div>
-         登录成功 <br/>
+          <br/>
 	
 	 
 

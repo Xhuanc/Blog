@@ -10,7 +10,7 @@
 </head>
 <style type="text/css">
  body{
-   background:url())  no-repeat center center;
+   background:url()no-repeat center center;
    background-size:cover;
    background-attachment:fixed;
     background-color: #daecda;
@@ -42,19 +42,19 @@
 }
 
 #uname{
-    background-color: ;
+    background-color:silver;
     padding-left: 10px;
 
 }
 
 
 #upwd{
-    background-color: ;
+    background-color:silver ;
     padding-left: 10px;
 
 }
 #upwd1{
-    background-color: ;
+    background-color:silver ;
     padding-left: 10px;
 	
 }

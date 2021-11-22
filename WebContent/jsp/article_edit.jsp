@@ -9,7 +9,7 @@
 <title>写文章</title>
 <link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
 <!-- 样式初始化 -->
-<link rel="stylesheet" type="text/css" href="http://47.102.212.18/iDouBan/css/init.css">
+<link rel="stylesheet" type="text/css" href="/iDouBan/css/init.css">
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -452,7 +452,7 @@
 		<div id="nav-inner">
 			<!-- 放置logo的地方 -->
 			<div id="nav-logo">
-					<img alt="豆瓣-文章编辑-logo" src="http://47.102.212.18/iDouBan/image/文章编辑器_豆瓣LOGO.jpg" width=60px  height=40px >
+					<img alt="豆瓣-文章编辑-logo" src="/iDouBan/image/文章编辑器_豆瓣LOGO.jpg" width=60px  height=40px >
 			</div>
 			<!-- 写文章的这三个字，当做导航栏标头 -->
 			<div id="nav-label-div">
@@ -526,7 +526,7 @@
 						</form>
 					</div>
 				
-				<form action="http://47.102.212.18/iDouBan/ArticleEditServlet?method=edit_article" method="post" id="onSubmit" style="display: none;">
+				<form action="/iDouBan/ArticleEditServlet?method=edit_article" method="post" id="onSubmit" style="display: none;">
 					<div>
 						<!-- 隐藏表单，用于传输数据-文章标题处--即textarea -->
 						<input type="hidden" id="edit-title" name = "title" value="" placeholder="写标题">

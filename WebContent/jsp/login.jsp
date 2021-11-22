@@ -6,17 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>登录豆瓣</title>
-<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+<link rel="icon" href="/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 
-<style type="text/css">
-body {
-	margin: 0;
-	background-image: url('http://47.102.212.18/iDouBan/image/portrait/登录背景设置.jpg');
-	background-repeat:no-repeat;
-        background-position:0% 0%;
-	background-size:contain;
-	background-color: #22C3AA;
-}
+<%--<style type="text/css">--%>
+<%--body {--%>
+<%--	/*margin: 0;*/--%>
+<%--	/*background-image: url('/portrait/登录背景设置.jpg');*/--%>
+<%--	/*background-repeat:no-repeat;*/--%>
+<%--    /*    background-position:0% 0%;*/--%>
+<%--	/*background-size:contain;*/--%>
+<%--	/*background-color: #22C3AA;*/--%>
+<%--}--%>
 </style>
 <!-- 背景图片的设置 CSS  初始化css -->
 <style type="text/css">
@@ -39,7 +39,7 @@ body {
 			*zoom:1;
 		}
 		 body{
-		   background:url())  no-repeat center center;
+		   background:url("/portrait/登录背景设置.jpg") no-repeat center center;
 		   background-size:cover;
 		   background-attachment:fixed;
 		   background-color:#edf4ed;
@@ -83,7 +83,7 @@ body {
 }
 
 #uname,#upwd{/*输入框的初始化布局设置*/
-    background-color: ;
+    background-color:#FFFFFF ;
     padding-left: 10px;
 
 }
@@ -121,7 +121,7 @@ body {
 #verify_code{
 padding-left: 10px;
     margin-bottom: 10px;
-    vertical-align:middle/*input img同一行的方法*/ 
+    vertical-align:middle;/*input img同一行的方法*/
     outline: none;
     dipslay:inline-block;
     border-radius: 3px;
@@ -150,7 +150,7 @@ padding-left: 10px;
 .verify_inner{
     dipslay:inline-block;
 
-      margin-bottom: 10px;
+	margin-bottom: 10px;
     
     outline: none;
     border-radius: 3px;
@@ -258,8 +258,8 @@ padding-left: 10px;
 		<!-- 自动登录的功能 -->
 		
 		<div>
-			    <a href="http://47.102.212.18/iDouBan/jsp/register.jsp" id="login_bottom_find"><font color=blue>忘记密码</font></a>
-				<a href="http://47.102.212.18/iDouBan/jsp/register.jsp" id="login_bottom_sign"><font color=blue>注册账号</font></a>
+				<a href="http://localhost:8080/iDouBan/jsp/register.jsp" id="login_bottom_find"><font color=blue>忘记密码</font></a>
+				<a href="http://localhost:8080/iDouBan/jsp/register.jsp" id="login_bottom_sign"><font color=blue>注册账号</font></a>
 	    </div>
 	    <!-- 表单输入数据给后台，返回的错误的消息提示功能 -->
 	    <div id="msg" class="login_level">
@@ -276,7 +276,7 @@ padding-left: 10px;
 <!--  自动登录按钮被点击后 非空判断  -->
 <c:if test="${not empty cookie.auto.value}">
 <!-- 重定位到登陆界面 -->
-	 <c:redirect url="http://47.102.212.18/iDouBan/jsp/alter.jsp" />
+	 <c:redirect url="http://localhost:8080/iDouBan/jsp/alter.jsp" />
 </c:if>
 
 

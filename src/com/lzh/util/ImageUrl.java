@@ -16,7 +16,7 @@ public class ImageUrl
 	/**
 	 * 项目名的目录+"/"
 	 */
-	private static  String guide = "http://47.102.212.18/iDouBan/image/";
+	private static  String guide = "http://localhost:8080/iDouBan/image/";
 	private static Map<String, String> map =  new HashMap<>();
 
 	/**
