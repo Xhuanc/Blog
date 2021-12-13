@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>文章内容</title>
-<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+<link rel="icon" href="/iDouBan/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 
 <!-- 
 	文章的显示页面
@@ -62,7 +62,7 @@
 		}
 		#first_menu a{
 		    float:right;/*右对齐*/ 
-			font-family: 5px;/*字体*/
+			font-family: Gabriola;/*字体*/
 			color:#d5d5d5;
 			text-decoration:none;/*取消下划线*/
 			/* width:100px; */
@@ -108,7 +108,7 @@
 			float:left;/*使排列成一行*/
 		}
 		.navbar li a{
-			font-family: 33px;/*字体*/
+			font-family: Gabriola;/*字体*/
 			color:#072;
 			text-decoration:none;/*取消下划线*/
 			/* width:100px; */
@@ -149,7 +149,7 @@
 			/* background-color: pink; */
 				float:left;
 				/*搜素按钮的图片*/
-				background: #FFFFFF url(http://47.102.212.18/iDouBan/image/01.png) center center no-repeat;
+				background: #FFFFFF url("http://localhost:8080/iDouBan/image/01.png") center center no-repeat;
 				background-size:15px 15px;
 		}
 		/*放置主要的页面内容*/
@@ -195,7 +195,7 @@
 		margin-top:10px;
 		margin-buttom:10px;
 		margin-left:10px;
-		font-family: 33px;/*字体*/
+		font-family: Gabriola;/*字体*/
 		color:#072;
 		
 		}
@@ -203,7 +203,7 @@
 		margin-top:10px;
 		margin-buttom:10px;
 		margin-left:10px;
-		font-family: 33px;/*字体*/
+		font-family: Gabriola;/*字体*/
 		color:#072;
 		}
 		/*用户操作超链接*/
@@ -364,10 +364,10 @@ textarea{
 			<nav id="first">
 				<div id="first_menu">
 					<!-- 跳到servlet，对用户的cookie进行注销 -->
-				    <a  href="http://47.102.212.18/iDouBan/ClearLoginServlet">退出登录</a>
+				    <a  href="/iDouBan/ClearLoginServlet">退出登录</a>
 				    <!-- 相对于端口号的相对路径 -->
-					<a  href="http://47.102.212.18/iDouBan/jsp/alter.jsp">账号管理</a>
-					<a  href="http://47.102.212.18/iDouBan/jsp/my_page.jsp">个人主页</a>
+					<a  href="/iDouBan/jsp/alter.jsp">账号管理</a>
+					<a  href="/iDouBan/jsp/my_page.jsp">个人主页</a>
 					
 					<a href="/iDouBan/DoumailServlet?method=my_doumail_list">豆邮</a>
 					
@@ -377,7 +377,7 @@ textarea{
 					<!-- 先跳转servlet 查询第一页的所有人信息 -->
 					<a href="/iDouBan/EveryoneListServlet?method=everyone_list">所有人</a>
 					<!-- 编辑文章 -->
-					<a href="http://47.102.212.18/iDouBan/jsp/article_edit.jsp" target="_blank">写文章</a>
+					<a href="/iDouBan/jsp/article_edit.jsp" target="_blank">写文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=article_list">所有文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=my_article_list" >我的文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=my_collection_list">我的收藏</a>
@@ -388,13 +388,13 @@ textarea{
 					<nav  id="second_menu">
 						<!-- logo部分 -->
 							<div class="logo">
-							 	<img alt="豆瓣logo" src="http://47.102.212.18/iDouBan/image/豆瓣首页logo.jpg" width=175px height=58px >
+							 	<img alt="豆瓣logo" src="/iDouBan/image/豆瓣首页logo.jpg" width=175px height=58px >
 							</div>
 						<!-- 导航栏部分_可选择部分 -->
 							<div class="navbar">
 								<ul>
 									<li><a href="#">首页</a></li>
-									<li><a href="http://47.102.212.18/iDouBan/jsp/my_page.jsp">个人主页</a></li>
+									<li><a href="/iDouBan/jsp/my_page.jsp">个人主页</a></li>
 									<li><a href="/iDouBan/ArticleListServlet?method=article_list">浏览发现</a></li>
 								</ul>	
 							</div>
@@ -743,7 +743,7 @@ textarea{
 	}
 	
 	//页面先加载完文章主题部分--然后通过ajax加载评论部分
-	//原生JS实现AJAX 
+	//原生JS实现AJAX
 	//封装要进行发送AJAX请求的函数---评论区专用
 	function toAjax(c){
 		
@@ -755,10 +755,11 @@ textarea{
 		/* 设置xmlHttpRequest对象的回调函数 */
 		xmlHttpRequest.onreadystatechange = callback ;
 		// 异步方式为false 同步处理---为了拿到值
-		xmlHttpRequest.open("post","http://47.102.212.18/iDouBan/ArticleShowServlet",false);
+		xmlHttpRequest.open("post","http://localhost:8080/iDouBan/ArticleShowServlet",false);
 		//设置post方式的头信息--文件上传application/x-www-form-urlencoded  multipart/form-data --文件上传不能加这个标头设置
 		xmlHttpRequest.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-		xmlHttpRequest.send("method=comment_show&article_id="+${requestScope.article.articleId}+"&currentPage="+c); 
+		xmlHttpRequest.send("method=comment_show&article_id=${requestScope.article.articleId}&currentPage="+currentPage);
+
 	}
 	
 	
@@ -795,7 +796,7 @@ textarea{
 								'						        <!-- 评论的内容-->'+
 								'						        <p id=\"comment-msg\" style="margin: 10px 2px;height: auto;    line-height: 1.6;font-size: 13px;    width: 575px;word-wrap: break-word;overflow: hidden;">'+obj.objects[i].comMsg+
 								'							<a href="#submit-confirm" class=\"reply_a\" id=\"'+obj.objects[i].commentId+'\"  style=\"color : grey;float: right;margin: 9px 2px;\">回复</a>'+
-								'						<a href=\"/iDouBan/ArticleShowServlet?pre_method=comment_star&method=article_show&comment_id='+obj.objects[i].commentId+'&article_id='+${requestScope.article.articleId}+'\" class="comment_star_a" id="127" style="color : grey;float: right;margin: 9px 2px;">点赞('+obj.objects[i].comStar+')</a>'+
+								'						<a href=\"/iDouBan/ArticleShowServlet?pre_method=comment_star&method=article_show&comment_id='+obj.objects[i].commentId+'&article_id='${requestScope.article.articleId}+'\" class="comment_star_a" id="127" style="color : grey;float: right;margin: 9px 2px;">点赞('+obj.objects[i].comStar+')</a>'+
 								'						</p>'+
 								'						    </div>'+
 								'<input type=\"hidden\"   value = \"'+obj.objects[i].commentId+'\">'+
@@ -824,7 +825,7 @@ textarea{
 									'						        <!-- 评论的内容-->'+
 									'						        <p id=\"comment-msg\" style="margin: 10px 2px;height: auto;    line-height: 1.6;font-size: 13px;    width: 575px;word-wrap: break-word;overflow: hidden;">'+obj.objects[i].comMsg+
 									'							<a href="#submit-confirm" class=\"reply_a\" id=\"'+obj.objects[i].commentId+'\"  style=\"color : grey;float: right;margin: 9px 2px;\">回复</a>'+
-									'						<a href=\"/iDouBan/ArticleShowServlet?pre_method=comment_star_cancel&method=article_show&comment_id='+obj.objects[i].commentId+'&article_id='+${requestScope.article.articleId}+'\" class="comment_star_a" id="127" style="color : grey;float: right;margin: 9px 2px;">取消点赞('+obj.objects[i].comStar+')</a>'+
+									'						<a href=\"/iDouBan/ArticleShowServlet?pre_method=comment_star_cancel&method=article_show&comment_id='+obj.objects[i].commentId+'&article_id='${requestScope.article.articleId}+'\" class="comment_star_a" id="127" style="color : grey;float: right;margin: 9px 2px;">取消点赞('+obj.objects[i].comStar+')</a>'+
 									'						</p>'+
 									'						    </div>'+
 									'<input type=\"hidden\"   value = \"'+obj.objects[i].commentId+'\">'+
@@ -874,11 +875,11 @@ textarea{
 		/* 设置xmlHttpRequest对象的回调函数 */
 		xmlHttpRequest.onreadystatechange = callbackReply ;
 		// 异步方式为false 同步处理---为了拿到值
-		xmlHttpRequest.open("post","http://47.102.212.18/iDouBan/ArticleShowServlet",false);
+		xmlHttpRequest.open("post","http://localhost:8080/iDouBan/ArticleShowServlet",false);
 		//设置post方式的头信息--文件上传application/x-www-form-urlencoded  multipart/form-data --文件上传不能加这个标头设置
 		xmlHttpRequest.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 		//url为回复方式
-		xmlHttpRequest.send("method=reply_show&article_id="+${requestScope.article.articleId}+"&currentPage="+currentPage); 
+		xmlHttpRequest.send("method=reply_show&article_id="${requestScope.article.articleId}+"&currentPage="+currentPage);
 	}
 	
 	

@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>写文章</title>
-<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://localhost:8080/iDouBan/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 <!-- 样式初始化 -->
 <link rel="stylesheet" type="text/css" href="/iDouBan/css/init.css">
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -331,7 +331,7 @@
 	    cursor: text;
 	    border: 1px solid #ccc;
 	    border-radius: 30px;
-	    height: 31.600;
+	    height: 31px;
 	}
 	/*a2-2--布局调节*/
 	#groups-input-wrapper {
@@ -452,7 +452,7 @@
 		<div id="nav-inner">
 			<!-- 放置logo的地方 -->
 			<div id="nav-logo">
-					<img alt="豆瓣-文章编辑-logo" src="/iDouBan/image/文章编辑器_豆瓣LOGO.jpg" width=60px  height=40px >
+					<img alt="豆瓣-文章编辑-logo" src="http://localhost:8080/iDouBan/image/文章编辑器_豆瓣LOGO.jpg" width=60px  height=40px >
 			</div>
 			<!-- 写文章的这三个字，当做导航栏标头 -->
 			<div id="nav-label-div">
@@ -704,7 +704,7 @@
 		/* 设置xmlHttpRequest对象的回调函数 */
 		xmlHttpRequest.onreadystatechange = callback ;
 		// 异步方式为true
-		xmlHttpRequest.open("post","http://47.102.212.18/iDouBan/UploadServlet",true);
+		xmlHttpRequest.open("post","http://localhost:8080/iDouBan/UploadServlet",true);
 		/* 
 		//设置post方式的头信息--文件上传application/x-www-form-urlencoded  multipart/form-data --文件上传不能加这个标头设置
 		xmlHttpRequest.setRequestHeader("Content-Type"," multipart/form-data"); */

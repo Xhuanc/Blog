@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 
 <title>与${sessionScope.nickname}的豆邮</title>
-<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+<link rel="icon" href="/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 
 <!-- 和别人的豆邮 -->
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -53,7 +53,7 @@
 		}
 		#first_menu a{
 		    float:right;/*右对齐*/ 
-			font-family: 5px;/*字体*/
+			font-family: Gabriola;/*字体*/
 			color:#d5d5d5;
 			text-decoration:none;/*取消下划线*/
 			/* width:100px; */
@@ -99,7 +99,7 @@
 			float:left;/*使排列成一行*/
 		}
 		.navbar li a{
-			font-family: 33px;/*字体*/
+			font-family: Gabriola;/*字体*/
 			color:#072;
 			text-decoration:none;/*取消下划线*/
 			/* width:100px; */
@@ -140,7 +140,7 @@
 			/* background-color: pink; */
 				float:left;
 				/*搜素按钮的图片*/
-				background: #FFFFFF url(http://47.102.212.18/iDouBan/image/01.png) center center no-repeat;
+				background: #FFFFFF url("/image/01.png") center center no-repeat;
 				background-size:15px 15px;
 		}
 		/*放置主要的页面内容*/
@@ -357,10 +357,10 @@ textarea{
 			<nav id="first">
 				<div id="first_menu">
 					<!-- 跳到servlet，对用户的cookie进行注销 -->
-				    <a  href="http://47.102.212.18/iDouBan/ClearLoginServlet">退出登录</a>
+				    <a  href="/iDouBan/ClearLoginServlet">退出登录</a>
 				    <!-- 相对于端口号的相对路径 -->
-					<a  href="http://47.102.212.18/iDouBan/jsp/alter.jsp">账号管理</a>
-					<a  href="http://47.102.212.18/iDouBan/jsp/my_page.jsp">个人主页</a>
+					<a  href="/iDouBan/jsp/alter.jsp">账号管理</a>
+					<a  href="/iDouBan/jsp/my_page.jsp">个人主页</a>
 					
 					<a href="/iDouBan/DoumailServlet?method=my_doumail_list">豆邮</a>
 					
@@ -370,7 +370,7 @@ textarea{
 					<!-- 先跳转servlet 查询第一页的所有人信息 -->
 					<a href="/iDouBan/EveryoneListServlet?method=everyone_list">所有人</a>
 					<!-- 编辑文章 -->
-					<a href="http://47.102.212.18/iDouBan/jsp/article_edit.jsp" target="_blank">写文章</a>
+					<a href="/iDouBan/jsp/article_edit.jsp" target="_blank">写文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=article_list">所有文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=my_article_list" >我的文章</a>
 					<a href="/iDouBan/ArticleListServlet?method=my_collection_list">我的收藏</a>
@@ -381,13 +381,13 @@ textarea{
 					<nav  id="second_menu">
 						<!-- logo部分 -->
 							<div class="logo">
-							 	<img alt="豆瓣logo" src="http://47.102.212.18/iDouBan/image/豆瓣首页logo.jpg" width=175px height=58px >
+							 	<img alt="豆瓣logo" src="/iDouBan/image/豆瓣首页logo.jpg" width=175px height=58px >
 							</div>
 						<!-- 导航栏部分_可选择部分 -->
 							<div class="navbar">
 								<ul>
 									<li><a href="#">首页</a></li>
-									<li><a href="http://47.102.212.18/iDouBan/jsp/my_page.jsp">个人主页</a></li>
+									<li><a href="/iDouBan/jsp/my_page.jsp">个人主页</a></li>
 									<li><a href="/iDouBan/ArticleListServlet?method=article_list">浏览发现</a></li>
 								</ul>	
 							</div>
@@ -641,10 +641,10 @@ textarea{
 		/* 设置xmlHttpRequest对象的回调函数 */
 		xmlHttpRequest.onreadystatechange = callback ;
 		// 异步方式为false 同步处理---为了拿到值
-		xmlHttpRequest.open("post","http://47.102.212.18/iDouBan/DoumailServlet",true);
+		xmlHttpRequest.open("post","/iDouBan/DoumailServlet",true);
 		//设置post方式的头信息--文件上传application/x-www-form-urlencoded  multipart/form-data --文件上传不能加这个标头设置
 		xmlHttpRequest.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-		xmlHttpRequest.send("method=doumail_show_details&to_user_id="+${requestScope.toUserId}+"&currentPage="+c); 
+		xmlHttpRequest.send("method=doumail_show_details&to_user_id="${requestScope.toUserId}"&currentPage="+c);
 	}
 	
 	

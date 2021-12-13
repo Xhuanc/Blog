@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>重置密码</title>
-<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+<link rel="icon" href="/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 </head>
 <body>
 

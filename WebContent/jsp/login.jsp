@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%--	<%request.setCharacterEncoding("GBK");response.setCharacterEncoding("GBK");%>--%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>登录豆瓣</title>
+<title>豆瓣登录系统</title>
 <link rel="icon" href="/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 
 <%--<style type="text/css">--%>
@@ -39,12 +40,10 @@
 			*zoom:1;
 		}
 		 body{
-		   background:url("/portrait/登录背景设置.jpg") no-repeat center center;
-		   background-size:cover;
-		   background-attachment:fixed;
-		   background-color:#edf4ed;
-		
-		}
+			 background-size:cover;
+			 background: #edf4ed url("http://localhost:8080/iDouBan/portrait/登录背景设置.jpg") no-repeat fixed center center;
+
+		 }
 		 a:link,a:visited{/*去掉下划线*/
 		  text-decoration:none;
 		  } 
@@ -60,12 +59,13 @@
     margin-right: 100px;
     border-radius: 15px;
     margin-top: 150px;
+	opacity: 0.65;
 }
 /*登录标题*/
 #header_h1{
-	 padding: 20px 128px;
-	 color: #2ca160;
-     font-color: green;
+	 padding: 20px 165px;
+	 color: #2c49a1;
+     font-color: Blue;
 }
 /*对表单元素中的input的输入框进行统一格式处理*/
 /*对齐中长方形*/
@@ -131,7 +131,6 @@ padding-left: 10px;
     height: 42px;
     color: black;
     font-size: 14px;
-        
 }  
 /*验证码图片*/
 #verify_pic{
@@ -143,8 +142,7 @@ padding-left: 10px;
     border-style: none;
     width: 85px;
     height: 42px;
-    vertical-align:middle 
-
+    vertical-align:middle;
 }
 /*验证码一行*/
 .verify_inner{
@@ -209,14 +207,11 @@ padding-left: 10px;
     font-size: 14px;
 }
 
-
-
-
 </style>
 <form action="/iDouBan/LoginServlet" method="post" id="login_form">
 <%-- <font color="red">${requestScope.message}</font> --%>
 <div id="login">
-		<div ><h1 id="header_h1">登录豆瓣</h1>
+		<div ><h1 id="header_h1">登录</h1>
 		    </div>
 <!-- 登录的长方形界面框 -->
 	<div id="name" class="login_level">
@@ -264,7 +259,7 @@ padding-left: 10px;
 	    <!-- 表单输入数据给后台，返回的错误的消息提示功能 -->
 	    <div id="msg" class="login_level">
 	    	<!-- 提示信息 -->
-	    	<font color="red" >${requestScope.errorMsg}</font> 
+			 <!-- 提示信息 --><font color="red">${request.errorMsg}</font>
 	    	  <%-- <!-- 提示信息 --><font color="red">${requestScope.imageMsg}</font> --%>
 	    	  <%--  <!-- 提示信息 --><font color="red">${requestScope.pwdError}</font> --%> 
 	    </div>

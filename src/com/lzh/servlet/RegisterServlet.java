@@ -54,7 +54,7 @@ public class RegisterServlet extends HttpServlet {
 
 			  
 			  //调用service层的注册功能
-			  msg= us.register(name,pwd );
+			  msg= us.register(name,pwd);
 			  
 			  //对调用的结果进行分析，并且进行不同的处理
 		

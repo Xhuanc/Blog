@@ -16,13 +16,13 @@ public class ImageUrl
 	/**
 	 * 项目名的目录+"/"
 	 */
-	private static  String guide = "http://localhost:8080/iDouBan/image/";
+	private static  String guide = "http://localhost:8080/iDouBan/image/user_img/";
 	private static Map<String, String> map =  new HashMap<>();
 
 	/**
 	 * @Description  将原文件的名字改为  "时间戳+随机数" + "." + "文件后缀名"
 	 * @param fileName
-	 * @param userInfo 
+//	 * @param userInfo
 	 * @return lastFileName 更改后的文件名
 	 */
 	public static String alterFileName(String fileName){
@@ -42,7 +42,7 @@ public class ImageUrl
 			
 	/**
 	 * @Description 字符串的拼接 加上项目名目录----- “http://47.102.212.18/iDouBan/image/ "+ "时间戳"+"随机数" + "." + "文件后缀名"
-	 * @param filename 原本的文件名
+//	 * @param filename 原本的文件名
 	 * @return 文件名和文件存放的地址
 	 */
 	public static HashMap<String,String> imgUrl(String fileName)
@@ -59,7 +59,8 @@ public class ImageUrl
 		 */
 		String imgUrl = guide + lastFileName;
 			map.put(lastFileName, imgUrl);
-			
+		System.out.println("img_URL_test");
+		System.out.println(imgUrl);
 			return (HashMap<String, String>) map;
 		
 	}

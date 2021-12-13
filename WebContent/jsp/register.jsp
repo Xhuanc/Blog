@@ -6,11 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>注册</title>
-<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://localhost:8080/iDouBan/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 </head>
 <style type="text/css">
  body{
-   background:url()no-repeat center center;
+   background:url("/portrait/登录背景设置.jpg")no-repeat center center;
    background-size:cover;
    background-attachment:fixed;
     background-color: #daecda;
@@ -111,7 +111,7 @@
 				<input type = "password"  id="upwd1" name ="upwd1" placeholder="请再次输入密码"  onblur="isRepeat()"/><br/>
 				
 				<input type = "button" id="entry" value = "注册"  onclick="return check()"><br/>
-			<a href="http://47.102.212.18/iDouBan/jsp/login.jsp"><font color=blue>已有帐号？登录</font></a>
+			<a href="http://localhost:8080/iDouBan/jsp/login.jsp"><font color=blue>已有帐号？登录</font></a>
 			 <!-- 表单输入数据给后台，返回的错误的消息提示功能 -->
 			<div id="msg" class="register_level">
 			    <!-- 提示信息 -->
@@ -131,14 +131,17 @@
         
         if(uname.value == ""){
             alert("请输入用户名")
-	        }else if(upwd.value == ""){
-	            alert("请输入密码")
-		        }else if(upwd1.value == ""){
-		            alert("请再次输入密码");
-			        }else
-			        	{
-			            document.forms[0].submit()
-			        }
+	        }
+        else if(upwd.value == ""){
+			alert("请输入密码")
+		        }
+        else if(upwd1.value == ""){
+			alert("请再次输入密码");
+		}
+        else
+		{
+			document.forms[0].submit()
+		}
     }
 	
 	

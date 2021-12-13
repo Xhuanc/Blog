@@ -189,7 +189,7 @@ public int personage(User user) {
 }
 /**
  * @Description 更新数据库中的用户头像的地址
- * @param imageUrl
+// * @param imageUrl
  * @return 返回1表示更新成功
  * 		     	返回0表示更新失败
  */

@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>文章列表</title>
-<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+<link rel="icon" href="/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <!-- 显示文章列表的页面 -->
 		<style type="text/css">
@@ -52,7 +52,7 @@
 		}
 		#first_menu a{
 		    float:right;/*右对齐*/ 
-			font-family: 5px;/*字体*/
+			font-family: Gabriola;/*字体*/
 			color:#d5d5d5;
 			text-decoration:none;/*取消下划线*/
 			/* width:100px; */
@@ -98,7 +98,7 @@
 			float:left;/*使排列成一行*/
 		}
 		.navbar li a{
-			font-family: 33px;/*字体*/
+			font-family: Gabriola;/*字体*/
 			color:#072;
 			text-decoration:none;/*取消下划线*/
 			/* width:100px; */
@@ -185,7 +185,7 @@
 		margin-top:10px;
 		margin-buttom:10px;
 		margin-left:10px;
-		font-family: 33px;/*字体*/
+		font-family: Gabriola;/*字体*/
 		color:#072;
 		
 		}
@@ -193,7 +193,7 @@
 		margin-top:10px;
 		margin-buttom:10px;
 		margin-left:10px;
-		font-family: 33px;/*字体*/
+		font-family: Gabriola;/*字体*/
 		color:#072;
 		}
 		/*用户操作超链接*/
@@ -293,13 +293,13 @@
 					<nav  id="second_menu">
 						<!-- logo部分 -->
 							<div class="logo">
-							 	<img alt="豆瓣logo" src="http://47.102.212.18/iDouBan/image/豆瓣首页logo.jpg" width=175px height=58px >
+							 	<img alt="豆瓣logo" src="http://localhost:8080/iDouBan/image/豆瓣首页logo.jpg" width=175px height=58px >
 							</div>
 						<!-- 导航栏部分_可选择部分 -->
 							<div class="navbar">
 								<ul>
 									<li><a href="#">首页</a></li>
-									<li><a href="http://47.102.212.18/iDouBan/jsp/my_page.jsp">个人主页</a></li>
+									<li><a href="http://localhost:8080/iDouBan/jsp/my_page.jsp">个人主页</a></li>
 									<li><a href="/iDouBan/ArticleListServlet?method=article_list">浏览发现</a></li>
 								</ul>	
 							</div>
@@ -414,7 +414,7 @@
 								        </div>
 								         <c:if test="${requestScope.msg=='我的文章'}">
 									        <div >
-											  <a href="/iDouBan/ArticleListServlet?pre_method=delete_article&method=my_article_list&article_id=${a.articleId}" class="user_operation_btn" id="delete_article" style="color: red;"  onclick= "return confirm('你确定要删除这篇文章吗？删除之后将会永久删除，请慎重操作！！！')">删除</a>
+											  <a href="ArticleListServlet?pre_method=delete_article&method=my_article_list&article_id=${a.articleId}" class="user_operation_btn" id="delete_article" style="color: red;"  onclick= "return confirm('你确定要删除这篇文章吗？删除之后将会永久删除，请慎重操作！！！')">删除</a>
 											</div>
 									    </c:if>
 									    <c:if test="${requestScope.msg=='我的文章'}">

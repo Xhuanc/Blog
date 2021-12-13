@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="UTF-8">
 	<title>我的主页</title>
-	<link rel="icon" href="http://img.linzworld.cn/img/douban_favicon.ico" type="image/x-icon">
+	<link rel="icon" href="http://localhost:8080/iDouBan/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 	<!-- 我的页面的样式 -->
  <link rel="stylesheet" type="text/css" href="http://localhost:8080/iDouBan/css/my_page.css">
 	</head>
@@ -79,7 +79,7 @@
 							<!-- 个人信息 -->
 							<div id="user_info_show">
 								<div>个人信息</div>
-								<div>昵称：      ${sessionScope.userInfo.nickname}</div>
+								<div>昵称：    ${sessionScope.userInfo.nickname}</div>
 								<div>个性签名：${sessionScope.userInfo.signature}</div>
 								<div>自我介绍：${sessionScope.userInfo.selfIntroduc}</div>
 								<div>地址：${sessionScope.userInfo.address}</div>

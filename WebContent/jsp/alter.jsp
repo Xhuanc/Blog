@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+      <%@ taglib uri="http//java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>账号管理</title>
-<link rel="icon" href="http://localhost:8080/image/icon/iDouBan_favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://localhost:8080/iDouBan/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 <!-- 登录成功之后，进行个人信息的修改 -->
 <!-- 导航栏 -->
  <link rel="stylesheet" type="text/css" href="http://localhost:8080/iDouBan/css/header.css">
@@ -17,7 +17,7 @@
 		    height: 1400px;
 		    border-radius: 5px;
 		    margin: auto 239.600px;
-		    background-color: #e1dbdb;
+		    background-color: #bbe1db;
 		}
 		/*页面的主要布局*/
 		#main_content-left-top{
@@ -36,7 +36,49 @@
 		    background-color: #edf4ed;
 		    margin-bottom: 50px;
 		}
-		
+
+		#change_btn{
+		/* 按钮美化 */
+			width: 200px; /* 宽度 */
+			height: 40px; /* 高度 */
+			border-width: 0px; /* 边框宽度 */
+			border-radius: 3px; /* 边框半径 */
+			background: #1E90FF; /* 背景颜色 */
+			cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+			outline: none; /* 不显示轮廓线 */
+			font-family: Microsoft YaHei; /* 设置字体 */
+			color: white; /* 字体颜色 */
+			font-size: 17px; /* 字体大小 */
+		}
+		#change_btn:hover { /* 鼠标移入按钮范围时改变颜色 */
+			background: #5599FF;
+		}
+
+		.basic_btn{
+			/* 按钮美化 */
+			width: 80px; /* 宽度 */
+			height: 40px; /* 高度 */
+			border-width: 0px; /* 边框宽度 */
+			border-radius: 3px; /* 边框半径 */
+			background: #1E90FF; /* 背景颜色 */
+			cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+			outline: none; /* 不显示轮廓线 */
+			font-family: Microsoft YaHei; /* 设置字体 */
+			color: white; /* 字体颜色 */
+			font-size: 17px; /* 字体大小 */
+		}
+		.intput_style{
+			width:320px;
+			box-sizing:border-box;
+			border:1px solid #ccc;
+			padding:5px;
+			line-height: 20px;
+			border-radius:3px;
+			font-size:14px;
+			font-family:"Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB","  Microsoft Yahei",sans-serif;
+			text-align: right;
+		}
+
  </style>
 </head>
 
@@ -85,27 +127,30 @@
 							
 								 <!-- 显示头像 -->
 										 <div>
-									        欢迎您： ${sessionScope.uname}<br/>
+<%--											 TODO: 头像--%>
+									        欢迎您:${sessionScope.uname}<br/>
 										 <img src="${sessionScope.userInfo.portrait}"  alt="我的头像" width="200" height="200" /><br/>
 									
 										 </div>
 										 
 										 <!-- 用户更换头像 -->
 										  <div>
+											  <br/>
 										  <form action="http://localhost:8080/iDouBan/UploadServlet" method="post" enctype="multipart/form-data">
-											选择文件：<input type="file" name="photo" value="" /><br/>
-											 		  <input type="submit"  name = "修改" value="上传头像"/> 
+											选择文件:<input type="file" name="photo" value="" /><br><br/>
+											 		  <input class="basic_btn" type="submit" name = "修改" value="上传头像"/>
 											 </form>
+											  <br/>
 										 </div>
 										 
 										 <!-- 用作个人主页的信息展示 -->
 										 <div>
 											 <form action="http://localhost:8080/iDouBan/MyPageServlet" method="post">
-											 昵称：	  <input type = "text" name ="nickname" /><br/>
-											 个性签名：<input type = "text" name ="signature" /><br/>
-											 自我介绍：<input type = "text" name ="selfIntroduc" /><br/>
-											 地址：	  <input type = "text" name ="address" /><br/>
-									 	  			  <input type = "submit" value = "修改">
+											 用户昵称:<input type = "text" class="intput_style" name ="nickname" /><br/><br/>
+											 个性签名:<input type = "text" class="intput_style" name ="signature" /><br/><br/>
+											 自我介绍:<input type = "text" class="intput_style" name ="selfIntroduce" /><br/><br/>
+											 用户地址:<input type = "text" class="intput_style" name ="address" /><br/><br/>
+									 	  			  <input id="change_btn" type = "submit" value = "修改">
 									
 											 </form>
 										 </div>
@@ -120,8 +165,5 @@
 						</div>
 					</div>
           <br/>
-	
-	 
-
 </body>
 </html>

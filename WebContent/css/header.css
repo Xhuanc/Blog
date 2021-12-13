@@ -39,7 +39,7 @@
 		}
 		#first_menu a{
 		    float:right;/*右对齐*/ 
-			font-family: 5px;/*字体*/
+			font-family: Gabriola;/*字体*/
 			color:#d5d5d5;
 			text-decoration:none;/*取消下划线*/
 			/* width:100px; */
@@ -83,8 +83,8 @@
 			float:left;/*使排列成一行*/
 		}
 		.navbar li a{
-			font-family: 33px;/*字体*/
-			color:#072;
+			font-family: Gabriola;/*字体*/
+			color:mediumpurple;
 			text-decoration:none;/*取消下划线*/
 			/* width:100px; */
 		
@@ -95,7 +95,7 @@
 			display:inline-block;/*显示成盒子大小*/
 		}
 		.navbar li a:hover{/*鼠标经过a链接*/
-			background-color: #6dbc65;/*显示的颜色*/
+			background-color: plum;/*显示的颜色*/
 		}
 		
 		/*搜索框外框部分--用来使搜索框排列在一行*/
@@ -124,7 +124,23 @@
 			/* background-color: pink; */
 				float:left;
 				/*搜素按钮的图片*/
-				background: #FFFFFF url(http://47.102.212.18/iDouBan/image/01.png) center center no-repeat;
+				background: #FFFFFF url("http://localhost:8080/iDouBan/image/01.png") center center no-repeat;
 				background-size:15px 15px;
 		}
-		
+		#changeButton{
+			width: 270px; /* 宽度 */
+			height: 40px; /* 高度 */
+			border-width: 0px; /* 边框宽度 */
+			border-radius: 3px; /* 边框半径 */
+			background: #1E90FF; /* 背景颜色 */
+			cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+			outline: none; /* 不显示轮廓线 */
+			font-family: Microsoft YaHei; /* 设置字体 */
+			color: white; /* 字体颜色 */
+			font-size: 17px; /* 字体大小 */
+
+		}
+		#changeButton:hover{
+			background: #5599FF;
+
+		}
