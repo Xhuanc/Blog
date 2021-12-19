@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>写文章</title>
+<title>Writing</title>
 <link rel="icon" href="http://localhost:8080/iDouBan/image/icon/iDouBan_favicon.ico" type="image/x-icon">
 <!-- 样式初始化 -->
 <link rel="stylesheet" type="text/css" href="/iDouBan/css/init.css">
@@ -65,7 +65,7 @@
 	    width: 100%;
 	    zoom: 1;
 	    margin-bottom: 20px;
-	    background: #f8f8f8;
+	    background: rgba(255, 255, 255, 0.36);
 	}
 	/*文章页面导航栏功能的存放区--内盒子*/
 	#nav-inner{
@@ -74,16 +74,15 @@
 	    margin: auto;/*居中*/
 	    font-size: 0;
 	    height: 40px;
-	    blackground-color:pink;
 	}
 	/*文章编辑器的LOGO*/
-	#nav-logo{
-	    display: inline;
-	    height: 100%;
-	    margin-right: 20px;
-	    width: 60px;
-	    float: left;
-	}
+	/*#nav-logo{*/
+	/*    display: inline;*/
+	/*    height: 100%;*/
+	/*    margin-right: 20px;*/
+	/*    width: 60px;*/
+	/*    float: left;*/
+	/*}*/
 	/*超链接样式*/
 	a {
     	cursor: pointer;
@@ -108,28 +107,27 @@
 	    padding: 0;
 	    font-size: 15px;
 	    font-weight: lighter;/*字体的粗细*/
-	    color: #bdbdbd;
+	    color: black;
 	    vertical-align: middle;/*设置元素的垂直对齐方式--把此元素放置在父元素的中部*/
 	    line-height: 40px;/*行高*/
 	}
 	/*提交按钮div外盒子*/
 	.editor-button-submit-div{
-		position: fixed;
+		position: absolute;
 	    top: 0;
 	    right: 0;
 	    margin-left: 20px;
+		margin-right:100px;
 	    white-space: nowrap;
 	    z-index: 1;
-	    background: #f8f8f8;
-		    
 	}
 	/*提交按钮的样式设置*/
 	.editor-button-submit:link, .editor-button-submit:visited {
 	    color: #fff;
-	    background-color: #3db04d;
+	    background-color: rgba(8, 90, 210, 0.5);
 	    width: 36px;
 	    height: 40px;
-    
+    	border-radius: 8px;
 	}
 	a:visited {
 	    color: #669;
@@ -137,6 +135,7 @@
 	}
 	a:hover{/*鼠标经过a链接*/
 		background-color: #f8f8f8;/*显示的颜色*/
+		border-radius: 6px;
 	}
 	/*提交按钮--超链接*/
 	.editor-button-submit{
@@ -159,7 +158,7 @@
 	}
 	/**文章编辑的区域**/
 	#article{
-		
+
     	padding-top: 80px;
     	height: 530px;
 	
@@ -188,6 +187,7 @@
 	.editor-title {
 		height: 36px;
 	    margin-bottom: 20px;
+
 	}
 	.editor-title .editor-input {
 	  
@@ -198,15 +198,17 @@
 	}
 	/*textarea的样式*/
 	.editor-input {
-	    padding: 0 10px;
 	    box-sizing: border-box;
 	    font-size: .928em;
 	    border: 1px solid #eee;
-	    background: #fff;
+	    background: rgba(255, 255, 255, 0.49);
 	    -webkit-appearance: none;
-	    width: 100%;
+	    width: 50%;
+		height: 42px;
 	    padding: 0 20px;
 	    outline: none;
+		border-radius: 10px;
+
 	}
 	
 	textarea {
@@ -222,8 +224,10 @@
 	#controller-area{
 	    font-size: 0;
 	    padding: 8px 15px;
-	    background: #fff;
+	    /*background: #fff;*/
 	    border-top: 1px solid #e5e5e5;/*水平分割线*/
+		background-color: rgba(255, 255, 255, 0.36);
+		border-radius: 15px;
 	}
 	/*工具栏中所有的按钮*/
 	.util-btn {
@@ -234,7 +238,8 @@
 	    padding-right: 5px;
 	    width: 50px;
 	    height: 20px;
-	    background: #eee;
+		background-color: #8ec5fc;
+		border-radius: 6px;
 	}
 	/*写文字的地方*/
 	/*2-文章编辑的背景色*/	
@@ -243,15 +248,18 @@
 	    margin: 0;
 	    padding: 0;
 	    font-size: 14px;
-	    height: 500px;
+	    height: available;
+		background-color: rgba(255, 255, 255, 0.36);
+		border-radius: 15px;
 	}
 	/*文章编辑处*/
 	#edit-area{
 		padding: 16px 20px;
 	    min-height: 400px;
 	    overflow: auto;
-	    background-color: #fafbfb;
+	    background-color: rgba(255, 255, 255, 0.36);
 	    margin-bottom: 118px;
+		border-radius: 15px;
 	}
 	
 /********************************************/	
@@ -451,13 +459,13 @@
 	<!-- 导航栏内盒子 -->
 		<div id="nav-inner">
 			<!-- 放置logo的地方 -->
-			<div id="nav-logo">
-					<img alt="豆瓣-文章编辑-logo" src="http://localhost:8080/iDouBan/image/文章编辑器_豆瓣LOGO.jpg" width=60px  height=40px >
-			</div>
+<%--			<div id="nav-logo">--%>
+<%--					<img alt="logo" src="http://localhost:8080/iDouBan/image/BLOG.png" width=60px  height=40px >--%>
+<%--			</div>--%>
 			<!-- 写文章的这三个字，当做导航栏标头 -->
 			<div id="nav-label-div">
 				<h1 class="nav-label">
-				     写文章
+				    Write Down Your Artical!
 				 </h1>
 			</div>
 			<!-- 
@@ -508,7 +516,7 @@
 							 
 					</div>
 					<!--3- 写文章的背景 -->
-					<div id="edit-background" >
+					<div style="margin-top: 30px" id="edit-background" >
 					
 						<!-- 写文章的地方，装有HTML代码 -->
 					   <div id='edit-area' contenteditable="true" >
